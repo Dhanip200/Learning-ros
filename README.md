@@ -44,27 +44,6 @@ Screen 4: Finish configuration
 Click "Finish".
 Verify VcXsrv is Running: Look for the 'X' icon in your Windows system tray. It must be there. Hover over it to confirm it says "XLaunch :0.0" or "Xming Server :0.0". If it's not there, VcXsrv did not start correctly, and you need to restart this step from "End ALL VcXsrv Processes".
 Configure NVIDIA Control Panel for vcxsrv.exe:
-
-Right-click on your desktop and select "NVIDIA Control Panel".
-Go to "Manage 3D settings" > "Program Settings" tab.
-Click "Add". Browse to C:\Program Files\VcXsrv\vcxsrv.exe and add it.
-For "Select the preferred graphics processor for this program", choose "High-performance NVIDIA processor".
-Click "Apply".
-Configure Windows Graphics Settings for vcxsrv.exe:
-
-Go to Windows Settings > System > Display.
-Scroll down and click "Graphics settings".
-Under "Choose an app to set preference", select "Desktop app" and click "Browse".
-Navigate to C:\Program Files\VcXsrv\vcxsrv.exe and add it.
-Once vcxsrv.exe is added to the list, click on it, then click "Options".
-Select "High performance". Click "Save".
-Confirm Windows Network Profile is Private:
-
-Go to Windows Settings > Network & internet.
-Click on your active Wi-Fi connection (it's named "VM8751078 properties" in your screenshot).
-Under "Network profile type", ensure it is set to "Private". If it's "Public", change it to "Private." This is critical for firewall rules.
-Verify Windows Defender Firewall Rules:
-
 Search for "Windows Defender Firewall with Advanced Security" in the Windows Start menu and open it.
 Check "Inbound Rules":
 Look for rules named something like "VcXsrv Inbound" and "WSL Inbound" (or whatever you named them).
@@ -72,3 +51,15 @@ Ensure they are "Enabled", "Action" is "Allow the connection", and "Profile" inc
 If you don't see them, create new ones: "New Rule..." -> "Program" -> Browse to C:\Program Files\VcXsrv\vcxsrv.exe (and repeat for C:\Windows\System32\wsl.exe).
 Check "Outbound Rules": Do the same verification/creation process for outbound rules for vcxsrv.exe and wsl.exe.
 REBOOT Your Entire Windows Machine: This is essential for all graphics and network changes to fully take effect.
+(Make sure u have correct driver and u should be fine)
+GO to bash and type  export DISPLAY=<your ip address>
+check it using this commond  echo $DISPLAY
+the print this glxinfo | grep "OpenGL version"
+glxinfo | grep "OpenGL renderer"
+output e.g.=OpenGL version string: 4.2 (Compatibility Profile) Mesa 24.2.8-1ubuntu1~24.04.1
+OpenGL renderer string: D3D12 (AMD Radeon(TM) Graphics)
+
+
+Now finally running the turtal bot on the jazzy
+ by running this =source /opt/ros/jazzy/setup.bash
+export TURTLEBOT3_MODEL=waffle
