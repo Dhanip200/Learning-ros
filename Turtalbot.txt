@@ -38,3 +38,6 @@ e/c : increase/decrease only angular speed by 10%
 CTRL-C to quit
 
 currently:      speed 0.5       turn 1.0
+
+
+run these commonds and get started....
