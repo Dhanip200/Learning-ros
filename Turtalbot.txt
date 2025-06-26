@@ -1,0 +1,40 @@
+ok now we can open a new terminal
+to export (kind off link the turtal bot (already opend from last time just type))
+bash
+source /opt/ros/jazzy/setup.bash
+export TURTLEBOT3_MODEL=waffle
+
+ok Important stuff:- 
+NODE:- node is like a worker that performs specific tasks(yep fancy names).
+
+to run transportation node u can run
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+output will be this:-
+
+
+This node takes keypresses from the keyboard and publishes them
+as Twist/TwistStamped messages. It works best with a US keyboard layout.
+---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+
+For Holonomic mode (strafing), hold down the shift key:
+---------------------------
+   U    I    O
+   J    K    L
+   M    <    >
+
+t : up (+z)
+b : down (-z)
+
+anything else : stop
+
+q/z : increase/decrease max speeds by 10%
+w/x : increase/decrease only linear speed by 10%
+e/c : increase/decrease only angular speed by 10%
+
+CTRL-C to quit
+
+currently:      speed 0.5       turn 1.0
