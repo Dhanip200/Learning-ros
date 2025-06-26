@@ -63,3 +63,4 @@ OpenGL renderer string: D3D12 (AMD Radeon(TM) Graphics)
 Now finally running the turtal bot on the jazzy
  by running this =source /opt/ros/jazzy/setup.bash
 export TURTLEBOT3_MODEL=waffle
+env DISPLAY=$DISPLAY ros2 launch turtlebot3_gazebo empty_world.launch.py
